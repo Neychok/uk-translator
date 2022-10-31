@@ -8,7 +8,13 @@ const fileName = process.argv[2];
 
 try {
 	if (fs.existsSync(fileName)) {
+		console.log('Translating file: ' + fileName);
 		translateCSV(fileName);
+		console.log('Translation complete.');
+
+	} else {
+		console.log('File does not exist.');
+		process.exit();
 	}
 } catch(err) {
 	console.error(err)
