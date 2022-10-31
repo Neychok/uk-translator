@@ -1,0 +1,15 @@
+{
+  "name": "uk-translator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fast-csv": "^4.3.6",
+    "string-strip-html": "^8.3.0"
+  }
+}
