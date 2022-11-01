@@ -1,6 +1,8 @@
 # US to UK translator for Weglot
 This is a simple script that takes an export from Weglot, runs it through a dictionary, and outputs a new file with the translations.
 
+>  **This package requires Node 18 +**
+
 ## Installation
 1. Clone the repo
 2. Run `npm install`
