@@ -28,12 +28,15 @@ function translateCSV(file) {
 
 		let translatedWords = row.word_from;
 		let translations = translateWords(stripper.stripHtml(row.word_from).result);
-
 		if ( false !== translations ) {
 			for (let property in translations) {
-				for ( let word in translations[property][0] ) {
-					translatedWords = translatedWords.replaceAll(word, translations[property][0][word].details);
-				}
+				translations[property].forEach(function(translation) {
+					for ( let word in translation ) {
+						console.log(word + ' => ' + translation[word].details);
+						translatedWords = translatedWords.replaceAll(word, translation[word].details);
+					}
+				});
+				
 			};
 		}
 
@@ -54,8 +57,6 @@ function translateWords(words) {
 	};
 
 	let translations = translator.translate(words, options);
-
-	console.log(JSON.stringify(translations));
 
 	if (translations
 		&& Object.keys(translations).length > 0
