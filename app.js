@@ -49,10 +49,13 @@ function translateCSV(file) {
 function translateWords(words) {
 
 	var options = {
-	  spelling: true
+	  spelling: true,
+	  american: true
 	};
 
 	let translations = translator.translate(words, options);
+
+	console.log(JSON.stringify(translations));
 
 	if (translations
 		&& Object.keys(translations).length > 0
